@@ -1,0 +1,151 @@
+.tech-stack-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    width: 100%;
+  }
+  
+  .tech-stack-table {
+    width: 130%;
+    border-collapse: collapse;
+    background-color: #2d3748;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .table-header {
+    font-size: 1rem;
+    color: #869abd;
+    padding: 1rem;
+    text-align: center;
+    background-color: #1a202c;
+  }
+  
+  .tech-category {
+    border-bottom: 1px solid #3a4556;
+  }
+  
+  .tech-category:last-child {
+    border-bottom: none;
+  }
+  
+  .category-name {
+    padding: 1rem;
+    width: 30%;
+    color: #cbd5e0;
+    font-weight: 500;
+    vertical-align: middle;
+  }
+  
+  .tech-logos {
+    padding: 1rem;
+  }
+  
+  .logos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  .tech-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .tech-logo:hover {
+    transform: scale(1.15);
+    /* cursor: pointer; */
+  }
+  
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    justify-content: center; /* Centers the cards horizontally */
+    flex-wrap: wrap; /* Ensures they wrap properly on smaller screens */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    padding: 2rem 0;
+    justify-items: center; 
+    width: 130%;
+  }
+  
+  .project-card {
+    background: #2d3748;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+  
+  .project-title {
+    color: #869abd;
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+  }
+  
+  .project-description {
+    color: #cbd5e0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+  }
+  
+  .github-logo {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+  }
+  
+  .github-logo:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .project-image {
+      height: 150px;
+    }
+  }
+
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .tech-stack-container {
+      padding: 1rem;
+    }
+    
+    .category-name {
+      font-size: 0.9rem;
+      padding: 0.5rem;
+    }
+    
+    .tech-logo {
+      width: 35px;
+      height: 35px;
+    }
+    
+    .logos-grid {
+      gap: 1rem;
+    }
+  }

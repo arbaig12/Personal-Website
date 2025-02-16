@@ -1,0 +1,231 @@
+/* App.css */
+.app-container {
+  min-height: 100vh;
+}
+
+/* Fixed Header Styles */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #0e182b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 1000;
+}
+
+.name-title {
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #cbd5e0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+/* Fixed Sidebar Styles */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 60px; /* Header height */
+  bottom: 0;
+  width: 150px;
+  background: #050c1d18;
+  padding: 2rem;
+  z-index: 900;
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-image {
+  width: 150px; /* You can adjust the width */
+  height: 250px; /* You can adjust the height */
+  border-radius: 8px; /* Optional: You can still have slightly rounded corners */
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #4a5568;
+}
+
+/* Main Content Styles */
+.content-area {
+  margin-left: 250px; /* Sidebar width */
+  margin-top: 60px; /* Header height */
+  padding: 2rem;
+  min-height: calc(100vh - 60px);
+}
+
+.content-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.content-section h2 {
+  color: #869abdcb;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.content-section p {
+  color: #c8ceda96;
+  line-height: 1.6;
+}
+
+
+/* Update content-section styles */
+.content-about {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem 0; /* Reduced from 2rem */
+  border: 1px solid #3a4556; /* Add border */
+  border-radius: 8px;
+  background-color: #3b43501e; /* Background color inside border */
+  margin-top: 1rem; /* Reduce gap from header */
+}
+
+/* Update text color */
+.content-about p {
+  color: #e2e8f0; /* Brighter text color */
+  line-height: 1.6;
+  padding: 0 1.5rem 1.5rem; /* Add internal padding */
+  margin: 0;
+}
+
+.content-about h2 {
+  color: #869abd;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  padding: 1.5rem 1.5rem 0; /* Align heading with text */
+}
+
+/* Adjust first paragraph spacing */
+.content-about p:first-of-type {
+  padding-top: 1rem;
+}
+
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+  
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-contact-icon {
+  width: 17px;
+  height: 17px;
+  top: 2px;
+  vertical-align: middle;
+
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.profile-section > p {
+  font-size: 0.9rem; /* Smaller text size */
+  color: #aaa5a5; /* Subtle gray color */
+  margin: 8px 0; /* Reduced spacing above/below the text */
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  gap: 0.5rem;
+  color: #cbd5e0;
+}
+
+
+.content-area {
+  margin-left: 250px; /* Sidebar width + padding */
+  margin-top: 60px; /* Header height */
+  padding: 0; /* Remove padding for full-width resume */
+  min-height: calc(100vh - 60px);
+  position: relative;
+}
+
+/* Resume Viewer Styles */
+.resume-viewer {
+  position: absolute;
+  top: 20px; /* Adjust this value for more space between header and resume */
+  left: 200px;
+  width: 750px;
+  height: calc(100vh - 60px); /* Account for header */
+  border: none;
+}
+
+/* When PDF is shown */
+.content-area > .resume-viewer {
+  margin-top: 0;
+  padding-top: 0;
+  height: calc(100vh - 60px);
+}
+
+
+/* Add these styles */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-area {
+  flex: 1;
+  margin-left: 250px;
+  margin-top: 60px;
+  padding: 2rem;
+  padding-bottom: 100px; /* Space for footer */
+}
+
+.contact-footer {
+  background: #252a33ad;
+  padding: 1.5rem 2rem;
+  margin-left: 214px; /* Match sidebar width */
+  width: 110.7%;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  border-top: 1px solid #3a4556;
+}
+
+.contact-info {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+
+/* Remove any fixed/absolute positioning */
