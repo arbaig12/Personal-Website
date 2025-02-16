@@ -92,9 +92,9 @@ function App() {
       <main className="content-area">
         {showResume ? (
           <div className="resume-viewer">
-            <iframe title="Resume" src="/Resume.pdf" width="100%" height="100%">
+            <iframe title="Resume" src={`${process.env.PUBLIC_URL}/Resume.pdf`}  width="100%" height="100%">
               <p>Your browser does not support PDFs.
-                <a href="/Resume.pdf">Download Resume</a>
+                <a href={`${process.env.PUBLIC_URL}/Resume.pdf`} >Download Resume</a>
               </p>
             </iframe>
           </div>
