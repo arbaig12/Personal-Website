@@ -39,13 +39,13 @@ const Project = () => {
       title: "Neural Network",
       image: neural,
       description: "Created a Neural Network From Scratch using Numpy for Matrix manipulation. Utilized NN for classification problems",
-      githubLink: "https://github.com/arbaig12"
+      githubLink: "https://github.com/arbaig12/Neural-Network-From-Scratch"
     },
     {
       title: "Stock Market Predictor",
       image: stock,
       description: "Utilized Keras & TensorFlow to Project Stock Price Ranges via Neural Network and Random Forest. ",
-      githubLink: "https://github.com/arbaig12"
+      githubLink: "https://github.com/arbaig12/Stock-Predict"
     }
   ];
 
