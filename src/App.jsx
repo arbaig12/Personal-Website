@@ -7,6 +7,7 @@ import github from './assets/Github-Logo.png';
 import linkedIn from './assets/LinkedIn_logo_initials.png';
 import Timeline from './Timeline';  // Adjust the path based on your folder structure
 import Project from './Project';  // Adjust the path based on your folder structure
+import Resume from './assets/Resume.pdf';
 import { useState, useRef } from 'react';
 
 
@@ -92,9 +93,9 @@ function App() {
       <main className="content-area">
         {showResume ? (
           <div className="resume-viewer">
-            <iframe title="Resume" src="/Resume.pdf"  width="100%" height="100%">
+            <iframe title="Resume" src={Resume}  width="100%" height="100%">
               <p>Your browser does not support PDFs.
-                <a href="/Resume.pdf" >Download Resume</a>
+                <a href={Resume} >Download Resume</a>
               </p>
             </iframe>
           </div>
