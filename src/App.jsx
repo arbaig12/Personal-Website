@@ -100,9 +100,20 @@ function App() {
           </div>
         ) : (
           <>
-            <section id="about" ref={aboutRef} className="content-section">
+            <section id="about" ref={aboutRef} className="content-about">
               <h2>About Me</h2>
-              <p>Your about me content goes here...</p>
+              <p>
+                Hello, my name is Arslan Baig. I am a Junior studying Computer Science & Applied Mathematics and Statistics at Stony Brook University and a Software Engineer Intern at NYC Health + Hospitals.  
+                My passion for programming started in childhood, crafting Roblox games in Lua and designing redstone circuitry in Minecraft. These hobbies were all I would think about, yet at the time I didn’t realize that these recreational activities were shaping my problem-solving mindset.  
+                In high school, as I delved into computational courses, this passion evolved beyond gaming into a lifelong pursuit of learning and innovation. Since then, every opportunity to expand my knowledge has been met with enthusiasm— a mindset I carry forward in all aspects of my career.  
+              </p>
+              <p>
+                Over the years, I have honed my ability to develop solutions across multiple disciplines, mastering various programming languages and technologies. I find deep satisfaction in algorithm development, optimizing efficiency, and architecting large-scale projects that solve real-world problems.  
+                Whether it's designing scalable systems, working with artificial intelligence, or building impactful applications, I thrive on tackling challenges that push my abilities further.  
+              </p>
+              <p>
+                Feel free to explore the rest of my website to see my projects, experience, and skills in action. Let’s build something great together!  
+              </p>
             </section>
 
             <section id="experience" ref={experienceRef} className="content-section">

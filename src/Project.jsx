@@ -17,12 +17,36 @@ import bootstrapLogo from './assets/boot.png';
 import kerasLogo from './assets/keras.png';
 import tensorflowLogo from './assets/tensorflow.png';
 import numpyLogo from './assets/numpy.png';
+import githubLogo from './assets/github-logo.png'; // Add GitHub logo import
+import phreddit from './assets/phreddit.png'; 
+import neural from './assets/nn.png'; 
+import stock from './assets/stock.png'; 
 
 
 const Project = () => {
   const techStack = [
     { category: 'Languages', logos: [jsLogo, javaLogo,pythonLogo, csLogo, cLogo, sqlLogo, htmlLogo, cssLogo] },
     { category: 'Frameworks', logos: [reactLogo, nodeLogo, netLogo, flaskLogo, bootstrapLogo, kerasLogo, tensorflowLogo, numpyLogo] },
+  ];
+  const projects = [
+    {
+      title: "Phreddit",
+      image: phreddit,
+      description: "Mock-Reddit Website Made in JavaScript with React, Node, Express & Connected to a MongoDB server",
+      githubLink: "https://github.com/arbaig12/Fake-Reddit"
+    },
+    {
+      title: "Neural Network",
+      image: neural,
+      description: "Created a Neural Network From Scratch using Numpy for Matrix manipulation. Utilized NN for classification problems",
+      githubLink: "https://github.com/arbaig12"
+    },
+    {
+      title: "Stock Market Predictor",
+      image: stock,
+      description: "Utilized Keras & TensorFlow to Project Stock Price Ranges via Neural Network and Random Forest. ",
+      githubLink: "https://github.com/arbaig12"
+    }
   ];
 
   return (
@@ -53,6 +77,31 @@ const Project = () => {
           ))}
         </tbody>
       </table>
+      <div className="projects-grid">
+        {projects.map((project, index) => (
+          <div key={index} className="project-card">
+            <img 
+              src={project.image} 
+              alt={project.title} 
+              className="project-image" 
+            />
+            <h3 className="project-title">{project.title}</h3>
+            <p className="project-description">{project.description}</p>
+            <a 
+              href={project.githubLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="github-link"
+            >
+              <img 
+                src={githubLogo} 
+                alt="GitHub" 
+                className="github-logo" 
+              />
+            </a>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
