@@ -116,3 +116,31 @@
   color: #aaa5a5; /* Subtle gray color */
   margin: 8px 0; /* Reduced spacing above/below the text */
 }
+
+.content-area {
+  margin-left: 250px; /* Sidebar width + padding */
+  margin-top: 60px; /* Header height */
+  padding: 0; /* Remove padding for full-width resume */
+  min-height: calc(100vh - 60px);
+  position: relative;
+}
+
+/* Resume Viewer Styles */
+.resume-viewer {
+  position: absolute;
+  top: 20px; /* Adjust this value for more space between header and resume */
+  left: 200px;
+  width: 750px;
+  height: calc(100vh - 60px); /* Account for header */
+  border: none;
+}
+
+/* When PDF is shown */
+.content-area > .resume-viewer {
+  margin-top: 0;
+  padding-top: 0;
+  height: calc(100vh - 60px);
+}
+
+
+
