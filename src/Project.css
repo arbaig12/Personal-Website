@@ -1,0 +1,82 @@
+.tech-stack-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    width: 100%;
+  }
+  
+  .tech-stack-table {
+    width: 200%;
+    border-collapse: collapse;
+    background-color: #2d3748;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .table-header {
+    font-size: 1rem;
+    color: #869abd;
+    padding: 1rem;
+    text-align: center;
+    background-color: #1a202c;
+  }
+  
+  .tech-category {
+    border-bottom: 1px solid #3a4556;
+  }
+  
+  .tech-category:last-child {
+    border-bottom: none;
+  }
+  
+  .category-name {
+    padding: 1rem;
+    width: 30%;
+    color: #cbd5e0;
+    font-weight: 500;
+    vertical-align: middle;
+  }
+  
+  .tech-logos {
+    padding: 1rem;
+  }
+  
+  .logos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  .tech-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .tech-logo:hover {
+    transform: scale(1.15);
+    /* cursor: pointer; */
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .tech-stack-container {
+      padding: 1rem;
+    }
+    
+    .category-name {
+      font-size: 0.9rem;
+      padding: 0.5rem;
+    }
+    
+    .tech-logo {
+      width: 35px;
+      height: 35px;
+    }
+    
+    .logos-grid {
+      gap: 1rem;
+    }
+  }

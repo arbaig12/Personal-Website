@@ -112,7 +112,7 @@ function App() {
 
             <section id="projects" ref={projectRef} className="content-section">
               <h2>Projects</h2>
-              {/* <Project /> */}
+              <Project />
             </section>
 
           
