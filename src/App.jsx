@@ -112,7 +112,7 @@ function App() {
         ) : (
           <>
             <section id="about" ref={aboutRef} className="content-about">
-              <h2>About Mea</h2>
+              <h2>About Me</h2>
               <p>
                 Hello, my name is Arslan Baig. I am a Junior studying Computer Science & Applied Mathematics and Statistics at Stony Brook University and a Software Engineer Intern at NYC Health + Hospitals.  
                 My passion for programming started in childhood, crafting Roblox games in Lua and designing redstone circuitry in Minecraft. These hobbies were all I would think about, yet at the time I didn’t realize that these recreational activities were shaping my problem-solving mindset.  
