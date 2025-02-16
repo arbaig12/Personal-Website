@@ -7,7 +7,7 @@ import github from './assets/Github-Logo.png';
 import linkedIn from './assets/LinkedIn_logo_initials.png';
 import Timeline from './Timeline';  // Adjust the path based on your folder structure
 import Project from './Project';  // Adjust the path based on your folder structure
-import Resume from './assets/Resume.pdf';
+import Resume from '/Resume.pdf';
 import { useState, useRef } from 'react';
 
 
@@ -21,14 +21,24 @@ function App() {
 
   const handleNavClick = (e, sectionRef) => {
     e.preventDefault();
-
-    // If the resume is visible, hide it before navigating to the section
+  
     if (showResume) {
       setShowResume(false);
+      // Wait for DOM update
+      setTimeout(() => {
+        if (sectionRef.current) {
+          sectionRef.current.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 50);
+    } else if (sectionRef.current) {
+      sectionRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
-
-    // Scroll to the selected section
-    sectionRef.current.scrollIntoView({ behavior: 'smooth' });
   };
   return (
     
@@ -102,7 +112,7 @@ function App() {
         ) : (
           <>
             <section id="about" ref={aboutRef} className="content-about">
-              <h2>About Me</h2>
+              <h2>About Mea</h2>
               <p>
                 Hello, my name is Arslan Baig. I am a Junior studying Computer Science & Applied Mathematics and Statistics at Stony Brook University and a Software Engineer Intern at NYC Health + Hospitals.  
                 My passion for programming started in childhood, crafting Roblox games in Lua and designing redstone circuitry in Minecraft. These hobbies were all I would think about, yet at the time I didn’t realize that these recreational activities were shaping my problem-solving mindset.  
