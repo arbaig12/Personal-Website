@@ -92,16 +92,16 @@ function App() {
       <main className="content-area">
         {showResume ? (
           <div className="resume-viewer">
-            <iframe title="Resume" src={`${process.env.PUBLIC_URL}/Resume.pdf`}  width="100%" height="100%">
+            <iframe title="Resume" src="/Resume.pdf"  width="100%" height="100%">
               <p>Your browser does not support PDFs.
-                <a href={`${process.env.PUBLIC_URL}/Resume.pdf`} >Download Resume</a>
+                <a href="/Resume.pdf" >Download Resume</a>
               </p>
             </iframe>
           </div>
         ) : (
           <>
             <section id="about" ref={aboutRef} className="content-about">
-              <h2>Abouta Me</h2>
+              <h2>About Me</h2>
               <p>
                 Hello, my name is Arslan Baig. I am a Junior studying Computer Science & Applied Mathematics and Statistics at Stony Brook University and a Software Engineer Intern at NYC Health + Hospitals.  
                 My passion for programming started in childhood, crafting Roblox games in Lua and designing redstone circuitry in Minecraft. These hobbies were all I would think about, yet at the time I didn’t realize that these recreational activities were shaping my problem-solving mindset.  
