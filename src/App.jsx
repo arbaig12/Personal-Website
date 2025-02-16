@@ -5,6 +5,8 @@ import profileImage from './assets/mypicture.jpg';
 import jobPhoto from './assets/Elmhurst.png';
 import github from './assets/Github-Logo.png';
 import linkedIn from './assets/LinkedIn_logo_initials.png';
+import Timeline from './Timeline';  // Adjust the path based on your folder structure
+import Project from './Project';  // Adjust the path based on your folder structure
 import { useState, useRef } from 'react';
 
 
@@ -14,6 +16,7 @@ function App() {
   const aboutRef = useRef(null);
   const experienceRef = useRef(null);
   const contactRef = useRef(null);
+  const projectRef = useRef(null);
 
   const handleNavClick = (e, sectionRef) => {
     e.preventDefault();
@@ -44,6 +47,7 @@ function App() {
             {showResume ? 'Back to Main' : 'Resume'}
           </a>
           <a href="#experience" onClick={(e) => handleNavClick(e, experienceRef)}>Experience</a>
+          <a href="#project" onClick={(e) => handleNavClick(e, projectRef)}>Projects</a>
           <a href="#contact" onClick={(e) => handleNavClick(e, contactRef)}>Contact</a>
         </nav>
       </header>
@@ -88,9 +92,9 @@ function App() {
       <main className="content-area">
         {showResume ? (
           <div className="resume-viewer">
-            <iframe title="Resume" src="public/Resume.pdf" width="100%" height="100%">
+            <iframe title="Resume" src="/Resume.pdf" width="100%" height="100%">
               <p>Your browser does not support PDFs.
-                <a href="public/Resume.pdf">Download Resume</a>
+                <a href="/Resume.pdf">Download Resume</a>
               </p>
             </iframe>
           </div>
@@ -103,17 +107,42 @@ function App() {
 
             <section id="experience" ref={experienceRef} className="content-section">
               <h2>Experience</h2>
-              <p>Your experience content goes here...</p>
+              <Timeline />
             </section>
 
-            <section id="contact" ref={contactRef} className="content-section">
-              <h2>Contact</h2>
-              <p>Your contact information goes here...</p>
+            <section id="projects" ref={projectRef} className="content-section">
+              <h2>Projects</h2>
+              {/* <Project /> */}
             </section>
+
+          
           </>
         )}
       </main>
-    </div>
+      {!showResume && (
+        <footer className="contact-footer" id = "contact" ref = {contactRef}>
+          <div className="contact-info">
+            <div className="contact-item">
+              <span className="contact-icon">📞</span>
+              <a href="tel:+19179151979">+1 (917) 915-1979</a>
+            </div>
+            <div className="contact-item">
+              <span className="contact-icon">✉️ </span>
+              <a href="mailto:your.email@example.com">ab12person@gmail.com</a>
+            </div>
+            <div className="contact-item">
+              <span className="contact-icon"><img 
+                src={linkedIn} 
+                alt="LinkedIn" 
+                className="social-contact-icon" 
+              /> </span>
+              <a href="https://www.linkedin.com/in/arslanbaig12/">  arslanbaig12</a>
+            </div>
+          </div>
+        </footer>
+      )}
+      </div>
+
   );
 }
 

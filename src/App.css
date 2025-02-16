@@ -10,7 +10,7 @@
   left: 0;
   right: 0;
   height: 60px;
-  background: #2d3748;
+  background: #0e182b;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,7 +19,7 @@
 }
 
 .name-title {
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 1.5rem;
   margin: 0;
 }
@@ -82,7 +82,7 @@
 }
 
 .content-section h2 {
-  color: #869abd;
+  color: #869abdcb;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
@@ -106,6 +106,15 @@
   transition: transform 0.3s ease;
 }
 
+.social-contact-icon {
+  width: 17px;
+  height: 17px;
+  top: 2px;
+  vertical-align: middle;
+
+  transition: transform 0.3s ease;
+}
+
 .social-icon:hover {
   transform: scale(1.2);
   cursor: pointer;
@@ -116,6 +125,15 @@
   color: #aaa5a5; /* Subtle gray color */
   margin: 8px 0; /* Reduced spacing above/below the text */
 }
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  gap: 0.5rem;
+  color: #cbd5e0;
+}
+
 
 .content-area {
   margin-left: 250px; /* Sidebar width + padding */
@@ -143,4 +161,38 @@
 }
 
 
+/* Add these styles */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
+.content-area {
+  flex: 1;
+  margin-left: 250px;
+  margin-top: 60px;
+  padding: 2rem;
+  padding-bottom: 100px; /* Space for footer */
+}
+
+.contact-footer {
+  background: #252a33ad;
+  padding: 1.5rem 2rem;
+  margin-left: 214px; /* Match sidebar width */
+  width: calc(185% - 275px);
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  border-top: 1px solid #3a4556;
+}
+
+.contact-info {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+
+/* Remove any fixed/absolute positioning */
