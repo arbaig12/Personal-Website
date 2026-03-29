@@ -1,6 +1,5 @@
 import React from 'react';
 import './Project.css';
-// Import your technology logos
 import jsLogo from './assets/js.png';
 import pythonLogo from './assets/python.png';
 import cLogo from './assets/c.png';
@@ -17,59 +16,61 @@ import bootstrapLogo from './assets/boot.png';
 import kerasLogo from './assets/keras.png';
 import tensorflowLogo from './assets/tensorflow.png';
 import numpyLogo from './assets/numpy.png';
-import githubLogo from './assets/github-logo.png'; // Add GitHub logo import
-import phreddit from './assets/phreddit.png'; 
-import neural from './assets/nn.png'; 
-import stock from './assets/stock.png'; 
+import githubLogo from './assets/github-logo.png';
+import phreddit from './assets/phreddit.png';
+import neural from './assets/nn.png';
+import stock from './assets/stock.png';
 
+const techStack = [
+  {
+    category: 'Languages',
+    logos: [jsLogo, javaLogo, pythonLogo, csLogo, cLogo, sqlLogo, htmlLogo, cssLogo],
+  },
+  {
+    category: 'Frameworks',
+    logos: [reactLogo, nodeLogo, netLogo, flaskLogo, bootstrapLogo, kerasLogo, tensorflowLogo, numpyLogo],
+  },
+];
+
+const projects = [
+  {
+    title: 'Phreddit',
+    image: phreddit,
+    description: 'Full-stack Reddit clone built with React, Node, Express, and MongoDB. Features posts, comments, nested threads, and user authentication.',
+    githubLink: 'https://github.com/arbaig12/Fake-Reddit',
+  },
+  {
+    title: 'Neural Network',
+    image: neural,
+    description: 'Neural network built from scratch using NumPy for matrix operations. Implements forward/backpropagation and solves multi-class classification problems.',
+    githubLink: 'https://github.com/arbaig12/Neural-Network-From-Scratch',
+  },
+  {
+    title: 'Stock Market Predictor',
+    image: stock,
+    description: 'LSTM and Random Forest models using Keras & TensorFlow to forecast stock price ranges with technical indicator feature engineering.',
+    githubLink: 'https://github.com/arbaig12/Stock-Predict',
+  },
+];
 
 const Project = () => {
-  const techStack = [
-    { category: 'Languages', logos: [jsLogo, javaLogo,pythonLogo, csLogo, cLogo, sqlLogo, htmlLogo, cssLogo] },
-    { category: 'Frameworks', logos: [reactLogo, nodeLogo, netLogo, flaskLogo, bootstrapLogo, kerasLogo, tensorflowLogo, numpyLogo] },
-  ];
-  const projects = [
-    {
-      title: "Phreddit",
-      image: phreddit,
-      description: "Mock-Reddit Website Made in JavaScript with React, Node, Express & Connected to a MongoDB server",
-      githubLink: "https://github.com/arbaig12/Fake-Reddit"
-    },
-    {
-      title: "Neural Network",
-      image: neural,
-      description: "Created a Neural Network From Scratch using Numpy for Matrix manipulation. Utilized NN for classification problems",
-      githubLink: "https://github.com/arbaig12/Neural-Network-From-Scratch"
-    },
-    {
-      title: "Stock Market Predictor",
-      image: stock,
-      description: "Utilized Keras & TensorFlow to Project Stock Price Ranges via Neural Network and Random Forest. ",
-      githubLink: "https://github.com/arbaig12/Stock-Predict"
-    }
-  ];
-
   return (
     <div className="tech-stack-container">
+      {/* Tech Stack Table */}
       <table className="tech-stack-table">
         <thead>
           <tr>
-            <th colSpan="2" className="table-header">Tech-Stack</th>
+            <th colSpan="2" className="table-header">Tech Stack</th>
           </tr>
         </thead>
         <tbody>
-          {techStack.map((category, index) => (
-            <tr key={index} className="tech-category">
-              <td className="category-name">{category.category}</td>
+          {techStack.map((row, i) => (
+            <tr key={i} className="tech-category">
+              <td className="category-name">{row.category}</td>
               <td className="tech-logos">
                 <div className="logos-grid">
-                  {category.logos.map((logo, logoIndex) => (
-                    <img 
-                      key={logoIndex}
-                      src={logo} 
-                      alt="tech-logo" 
-                      className="tech-logo" 
-                    />
+                  {row.logos.map((logo, j) => (
+                    <img key={j} src={logo} alt="tech logo" className="tech-logo" loading="lazy" width="48" height="48" />
                   ))}
                 </div>
               </td>
@@ -77,28 +78,37 @@ const Project = () => {
           ))}
         </tbody>
       </table>
+
+      {/* Project Cards */}
       <div className="projects-grid">
-        {projects.map((project, index) => (
-          <div key={index} className="project-card">
-            <img 
-              src={project.image} 
-              alt={project.title} 
-              className="project-image" 
-            />
-            <h3 className="project-title">{project.title}</h3>
-            <p className="project-description">{project.description}</p>
-            <a 
-              href={project.githubLink} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="github-link"
-            >
-              <img 
-                src={githubLogo} 
-                alt="GitHub" 
-                className="github-logo" 
-              />
-            </a>
+        {projects.map((project, i) => (
+          <div
+            key={i}
+            className="project-card"
+            data-reveal
+            style={{ transitionDelay: `${i * 0.12}s` }}
+          >
+            <img src={project.image} alt={project.title} className="project-image" loading="lazy" width="400" height="180" />
+
+            {/* Always-visible title bar at bottom */}
+            <div className="project-title-bar">
+              <h3 className="project-title">{project.title}</h3>
+            </div>
+
+            {/* Slide-up overlay on hover */}
+            <div className="project-overlay">
+              <h3 className="project-overlay-title">{project.title}</h3>
+              <p className="project-description">{project.description}</p>
+              <a
+                href={project.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="github-link"
+              >
+                <img src={githubLogo} alt="GitHub" className="github-logo" />
+                View on GitHub
+              </a>
+            </div>
           </div>
         ))}
       </div>

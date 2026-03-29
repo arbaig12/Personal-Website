@@ -1,0 +1,64 @@
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  transition: opacity 0.4s ease;
+}
+
+.loading-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-initials {
+  display: flex;
+  gap: 0.05em;
+  font-size: 5rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.loading-a {
+  color: var(--text-1);
+  opacity: 0;
+  animation: loadPop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s forwards;
+}
+
+.loading-b {
+  color: var(--accent);
+  opacity: 0;
+  animation: loadPop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.28s forwards;
+}
+
+@keyframes loadPop {
+  from { opacity: 0; transform: scale(0.5) translateY(12px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.loading-bar {
+  width: 100px;
+  height: 2px;
+  background: var(--border);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  width: 0;
+  background: var(--accent);
+  border-radius: 1px;
+  animation: loadFill 1s ease 0.3s forwards;
+}
+
+@keyframes loadFill {
+  from { width: 0; }
+  to   { width: 100%; }
+}
